@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: cache_request_body_route
+          uri: no://route
+          predicates:
+            - Path=/cache
+          filters:
+            - name: CacheRequestBody
+              args:
+                bodyClass: java.lang.String
