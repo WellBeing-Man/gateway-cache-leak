@@ -7,10 +7,12 @@ spring:
           uri: no://route
           predicates:
             - Path=/**
+#         with this memory leak occurs
 #          filters:
 #            - name: CacheRequestBody
 #              args:
 #                bodyClass: java.lang.String
+
 #          this is no leak version,
           filters:
             - name: NoLeakCacheRequestBody
