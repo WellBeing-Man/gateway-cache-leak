@@ -1,12 +1,18 @@
 spring:
   cloud:
     gateway:
+
       routes:
         - id: cache_request_body_route
           uri: no://route
           predicates:
             - Path=/cache
+#          filters:
+#            - name: CacheRequestBody
+#              args:
+#                bodyClass: java.lang.String
+#          this is no leak version,
           filters:
-            - name: CacheRequestBody
+            - name: NoLeakCacheRequestBody
               args:
                 bodyClass: java.lang.String
