@@ -6,7 +6,7 @@ spring:
         - id: cache_request_body_route
           uri: no://route
           predicates:
-            - Path=/cache
+            - Path=/**
 #          filters:
 #            - name: CacheRequestBody
 #              args:
